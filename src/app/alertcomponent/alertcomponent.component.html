@@ -1,0 +1,18 @@
+<!-- <app-user-list [user]="users_a"></app-user-list> -->
+
+<h2 appCustomdirective>Alert Form</h2>
+<div class="col-sm-6">
+    <form [formGroup]="newform" (ngSubmit)="save()">
+        <input class="form-control" type="text" name="firstname" formControlName="firstname" />
+        <!-- <span *ngIf="firstname.touched">Error in Firstname</span> -->
+        <br>
+    
+        <input class="form-control" type="text" name="phone" formControlName="phone" />
+        <input type="submit" value="save" />
+    </form>
+</div>
+{{firstname}}
+<br>
+<p *ngFor="let d of data">{{d.username}}
+
+</p>

@@ -1,0 +1,17 @@
+<p>
+    <ngb-alert [dismissible]="true">
+      <strong>Warning!</strong> Better check yourself, you're not looking too good.
+    </ngb-alert>
+  </p>
+<!-- <app-alertcomponent></app-alertcomponent> -->
+<!-- <app-user-list [app_title]="title" (parentfunction)="parentfunction($event)" (test)="alert_func()"></app-user-list> -->
+
+<a routerLink="alert" >Alert View</a>
+<a routerLink="user/list" >User View</a>
+<a routerLink="role/rolelist" >Role View</a>
+<a routerLink="user/general" >general comp</a>
+<h2 appCustomdirective >Custom heading</h2>
+
+<router-outlet></router-outlet>
+<br>
+<button (click)="dynamic_component()">Load component</button>

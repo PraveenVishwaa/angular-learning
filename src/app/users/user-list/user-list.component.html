@@ -1,0 +1,54 @@
+<h1>{{app_title}}</h1>
+
+<h3 *ngFor="let data of userdata">
+    {{data.name}}
+</h3>
+
+<input type="text" [value]=currentVal />
+
+<input type="text" value={{currentVal}} />
+
+<input type="button" value="click me" (click)="onclick()">
+
+------
+
+<br>
+<div [ngSwitch]='currentVal'>
+    <span *ngSwitchCase='20'>
+        20 reached
+    </span>
+    <span *ngSwitchCase='25'>
+        25 reached
+    </span>
+    <span *ngSwitchCase='30'>
+        30 reached
+    </span>
+</div>
+
+<div class="col-sm-6">
+    <form #myForm="ngForm" (ngSubmit) = "saveform(myForm)">
+        <input type = "text" class="form-control" #name="ngModel" appCustomdirective name = "fullName" placeholder = "Your full name" ngModel>
+        <br/>
+      
+        <input [style.color]="'red'" class="form-control" type = "email" required #email="ngModel" name = "email" placeholder = "Your email" ngModel><span *ngIf="email.invalid && email.touched" >This feild is required</span>
+        <br/>
+        
+      
+        <textarea name = "message" placeholder = "Your message" ngModel></textarea>
+        <br/>
+        <input [disabled]="myForm.invalid" type = "submit" value = "Send">
+    </form>
+</div>
+
+
+<!-- <form [formGroup]="contactform" (ngSubmit)="onSubmit()">
+    <input type = "text" name = "fullName" placeholder = "Your full name" formControlName="fullName" >
+    <br/>
+  
+    <input type = "email" name = "email" placeholder = "Your email" formControlName="email" >
+    <br/>
+  
+    <textarea name = "message" placeholder = "Your message" formControlName="message" ></textarea>
+    <br/>
+    <input type = "submit" value = "Send">
+  </form>  -->
